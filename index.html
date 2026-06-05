@@ -3,17 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Crop Loan Calculator 2025-26</title>
 
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<meta name="theme-color" content="#1f6f2e">
+
 <style>
-    <script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js')
-      .then(() => console.log('Service Worker Registered'));
-  });
-}
-</script>
 body{
     font-family: Arial, sans-serif;
     margin:20px;
@@ -44,25 +41,31 @@ input{
     font-size:16px;
 }
 
-.yellow{background:#fff700;}
-.green{background:#00d26a;}
-.blue{background:#b8c7e6;}
-.total{background:#ff5c5c;color:white;font-weight:bold;}
-.orange{background:#f4a742;}
+.total{
+    background:#ff5c5c;
+    color:white;
+    font-weight:bold;
+}
+
+.orange{
+    background:#f4a742;
+}
 </style>
 </head>
+
 <body>
+
 <div style="text-align:center; margin-bottom:10px;">
     <img src="logo.png" alt="Crop Loan Calculator Logo" width="180">
 </div>
+
 <h2>Crop Loan Calculator 2025-26</h2>
-  <link rel="manifest" href="manifest.json">  
 
 <table>
 <tr>
     <th>Crop</th>
     <th>Acre</th>
-    <th>Hector</th>
+    <th>Hectare</th>
 </tr>
 
 <tr>
@@ -89,7 +92,6 @@ input{
     <td id="totalHector">0.00</td>
 </tr>
 </table>
-
 
 <table>
 <tr>
@@ -125,12 +127,9 @@ input{
     <td id="loanTotalAcre">0.00</td>
     <td id="grandTotal">0</td>
 </tr>
-
 </table>
 
-
 <script>
-
 function calculate(){
 
 let acre1=parseFloat(document.getElementById('acre1').value)||0;
@@ -155,13 +154,9 @@ document.getElementById('loanAcre1').innerHTML=acre1.toFixed(2);
 document.getElementById('loanAcre2').innerHTML=acre2.toFixed(2);
 document.getElementById('loanAcre3').innerHTML=acre3.toFixed(2);
 
-let rate1=27200;
-let rate2=29000;
-let rate3=48000;
-
-let total1=acre1*rate1;
-let total2=acre2*rate2;
-let total3=acre3*rate3;
+let total1=acre1*27200;
+let total2=acre2*29000;
+let total3=acre3*48000;
 
 document.getElementById('loanTotal1').innerHTML=total1.toLocaleString('en-IN');
 document.getElementById('loanTotal2').innerHTML=total2.toLocaleString('en-IN');
@@ -171,18 +166,20 @@ let grand=total1+total2+total3;
 
 document.getElementById('loanTotalAcre').innerHTML=totalAcre.toFixed(2);
 document.getElementById('grandTotal').innerHTML=grand.toLocaleString('en-IN');
-
 }
-
 </script>
-<footer style="
-text-align:center;
-margin-top:20px;
-padding:10px;
-font-size:14px;
-color:#555;
-font-weight:bold;">
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js');
+  });
+}
+</script>
+
+<footer style="text-align:center;margin-top:20px;padding:10px;font-size:14px;color:#555;font-weight:bold;">
 © 2026 RZ_Homer. All Rights Reserved.
 </footer>
+
 </body>
 </html>
