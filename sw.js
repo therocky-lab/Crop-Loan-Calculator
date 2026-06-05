@@ -1,4 +1,4 @@
-const CACHE_NAME = "crop-loan-v1";
+const CACHE_NAME = "crop-loan-v3";
 
 const urlsToCache = [
   "./",
