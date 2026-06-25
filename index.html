@@ -128,7 +128,19 @@ input{
     <td id="grandTotal">0</td>
 </tr>
 </table>
-
+<div style="text-align:center; margin-top:15px;">
+    <button onclick="clearAll()"
+    style="
+    background:#d32f2f;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    font-size:16px;
+    border-radius:5px;
+    cursor:pointer;">
+    Clear All
+    </button>
+</div>
 <script>
 function calculate(){
 
@@ -166,6 +178,31 @@ let grand=total1+total2+total3;
 
 document.getElementById('loanTotalAcre').innerHTML=totalAcre.toFixed(2);
 document.getElementById('grandTotal').innerHTML=grand.toLocaleString('en-IN');
+}
+function clearAll(){
+
+document.getElementById('acre1').value='';
+document.getElementById('acre2').value='';
+document.getElementById('acre3').value='';
+
+document.getElementById('hector1').innerHTML='0.00';
+document.getElementById('hector2').innerHTML='0.00';
+document.getElementById('hector3').innerHTML='0.00';
+
+document.getElementById('totalAcre').innerHTML='0.00';
+document.getElementById('totalHector').innerHTML='0.00';
+
+document.getElementById('loanAcre1').innerHTML='0.00';
+document.getElementById('loanAcre2').innerHTML='0.00';
+document.getElementById('loanAcre3').innerHTML='0.00';
+
+document.getElementById('loanTotal1').innerHTML='0';
+document.getElementById('loanTotal2').innerHTML='0';
+document.getElementById('loanTotal3').innerHTML='0';
+
+document.getElementById('loanTotalAcre').innerHTML='0.00';
+document.getElementById('grandTotal').innerHTML='0';
+
 }
 </script>
 
